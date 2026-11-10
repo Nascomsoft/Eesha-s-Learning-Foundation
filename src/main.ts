@@ -10,6 +10,7 @@ const isOurWorkPage = window.location.pathname.replace(/\/+$/, '') === '/our-wor
 const isDonatePage = window.location.pathname.replace(/\/+$/, '') === '/donate'
 const isProgrammesPage = window.location.pathname.replace(/\/+$/, '') === '/programmes'
 const isMediaPage = window.location.pathname.replace(/\/+$/, '') === '/media'
+const isHomePage = window.location.pathname === '/'
 const workPage = `${ourWorkSection}${coreValuesSection}`
 const currentPage = isDonatePage
   ? donatePage
@@ -44,12 +45,18 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       <span></span><span></span>
     </button>
     <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-      <a href="/#about">About</a>
+      <div class="nav-dropdown">
+        <a href="/#about">About</a>
+        <button class="nav-menu-toggle" type="button" aria-label="Show About submenu" aria-expanded="false" aria-controls="about-submenu"><span aria-hidden="true">&#9662;</span></button>
+        <div class="nav-submenu" id="about-submenu" hidden>
+          <a href="/#about">Our Leadership</a>
+        </div>
+      </div>
       <a href="/our-work#core-areas">Our Work</a>
       <a href="/programmes">Programmes</a>
       <div class="nav-dropdown">
         <a href="/media">Media</a>
-        <button class="media-menu-toggle" type="button" aria-label="Show Media submenu" aria-expanded="false" aria-controls="media-submenu"><span aria-hidden="true">&#9662;</span></button>
+        <button class="nav-menu-toggle" type="button" aria-label="Show Media submenu" aria-expanded="false" aria-controls="media-submenu"><span aria-hidden="true">&#9662;</span></button>
         <div class="nav-submenu" id="media-submenu" hidden>
           <a href="/media#blog">Blog</a>
         </div>
@@ -61,7 +68,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
   <main>
     ${currentPage}
-    ${isDonatePage ? '' : contactSection}
+    ${isHomePage ? contactSection : ''}
   </main>
 
   <footer class="site-footer">
@@ -77,7 +84,9 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
 const menuToggle = document.querySelector<HTMLButtonElement>('.menu-toggle')!
 const siteNav = document.querySelector<HTMLElement>('.site-nav')!
-const mediaMenuToggle = document.querySelector<HTMLButtonElement>('.media-menu-toggle')!
+const aboutMenuToggle = document.querySelector<HTMLButtonElement>('[aria-controls="about-submenu"]')!
+const aboutSubmenu = document.querySelector<HTMLElement>('#about-submenu')!
+const mediaMenuToggle = document.querySelector<HTMLButtonElement>('[aria-controls="media-submenu"]')!
 const mediaSubmenu = document.querySelector<HTMLElement>('#media-submenu')!
 
 menuToggle.addEventListener('click', () => {
@@ -87,18 +96,30 @@ menuToggle.addEventListener('click', () => {
   siteNav.classList.toggle('is-open', !isExpanded)
 })
 
-mediaMenuToggle.addEventListener('click', () => {
-  const isExpanded = mediaMenuToggle.getAttribute('aria-expanded') === 'true'
-  mediaMenuToggle.setAttribute('aria-expanded', String(!isExpanded))
-  mediaMenuToggle.setAttribute('aria-label', isExpanded ? 'Show Media submenu' : 'Hide Media submenu')
-  mediaSubmenu.hidden = isExpanded
-})
+const bindSubmenuToggle = (
+  toggle: HTMLButtonElement,
+  submenu: HTMLElement,
+  label: string,
+) => {
+  toggle.addEventListener('click', () => {
+    const isExpanded = toggle.getAttribute('aria-expanded') === 'true'
+    toggle.setAttribute('aria-expanded', String(!isExpanded))
+    toggle.setAttribute('aria-label', `${isExpanded ? 'Show' : 'Hide'} ${label} submenu`)
+    submenu.hidden = isExpanded
+  })
+}
+
+bindSubmenuToggle(aboutMenuToggle, aboutSubmenu, 'About')
+bindSubmenuToggle(mediaMenuToggle, mediaSubmenu, 'Media')
 
 siteNav.querySelectorAll('a').forEach((link) => {
   link.addEventListener('click', () => {
     menuToggle.setAttribute('aria-expanded', 'false')
     menuToggle.setAttribute('aria-label', 'Open navigation')
     siteNav.classList.remove('is-open')
+    aboutMenuToggle.setAttribute('aria-expanded', 'false')
+    aboutMenuToggle.setAttribute('aria-label', 'Show About submenu')
+    aboutSubmenu.hidden = true
     mediaMenuToggle.setAttribute('aria-expanded', 'false')
     mediaMenuToggle.setAttribute('aria-label', 'Show Media submenu')
     mediaSubmenu.hidden = true

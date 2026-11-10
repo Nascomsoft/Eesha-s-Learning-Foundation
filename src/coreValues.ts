@@ -1,7 +1,7 @@
 export const coreValuesSection = `
     <section class="values-section" id="values">
       <div class="section-wrap">
-        <div class="section-label"><span>02</span> What guides us</div>
+        <div class="section-label"></div>
         <div class="section-heading-row">
           <h2>Our core values</h2>
           <p>The principles behind how we learn, work and serve.</p>

@@ -2,6 +2,7 @@ import logo from '../logos/ELF logo.jpeg'
 import atapLogo from '../logos/ATAP logo.webp'
 import atbuLogo from '../logos/atbu logo.jpg'
 import bwsaLogo from '../logos/BWSA logo.webp'
+import dwaLogo from '../logos/DWA logo.jpg'
 import fpbLogo from '../logos/FPB logo.jpg'
 import ithacLogo from '../logos/ITHAC logo.webp'
 import wakfLogo from '../logos/WAKF logo.webp'
@@ -12,7 +13,7 @@ export const aboutPage = `
     <section class="hero" id="home" aria-labelledby="hero-title">
       <div class="hero-shade"></div>
       <div class="hero-content">
-        <p class="eyebrow hero-eyebrow"><span></span> Bauchi, Nigeria</p>
+        
         <h1 id="hero-title">Eesha's Learning Foundation</h1>
         <p class="hero-tagline">Empowering minds. Inspiring voices. Building futures.</p>
         <p class="hero-copy">Creating room for children, young people and women to learn, find their voice and shape what comes next.</p>
@@ -21,11 +22,11 @@ export const aboutPage = `
           <a class="text-link light-link" href="#about">Discover our story</a>
         </div>
       </div>
-      <div class="hero-bottomline"><span>Learning belongs to everyone.</span></div>
+      
     </section>
 
     <section class="intro section-wrap" id="about">
-      <div class="section-label"><span>01</span> About the foundation</div>
+      
       <div class="intro-grid">
         <h2>Every child deserves the chance to discover their potential.</h2>
         <div class="intro-copy">
@@ -35,12 +36,12 @@ export const aboutPage = `
       </div>
       <div class="mission-vision">
         <article class="statement statement-teal">
-          <p class="eyebrow">Our vision</p>
+          <p class="eyebrow">Our Vision</p>
           <h3>A generation ready to create positive change.</h3>
           <p>To build a generation of confident, knowledgeable and socially responsible individuals equipped to create positive change.</p>
         </article>
         <article class="statement statement-gold">
-          <p class="eyebrow">Our mission</p>
+          <p class="eyebrow">Our Mission</p>
           <h3>Opportunity to learn, grow and thrive.</h3>
           <p>To create accessible learning, mentorship and development opportunities that empower children, young people and women to thrive.</p>
         </article>
@@ -50,7 +51,7 @@ export const aboutPage = `
     <section class="partnerships-section" id="partnerships">
       <div class="section-wrap">
         <div class="partnerships-intro">
-          <div class="section-label"><span>02</span> Working together</div>
+          
           <h2>Our Partners</h2>
           <p class="partnerships-copy">Sustainable impact cannot be achieved in isolation. ELF works with institutions, organizations, professionals, mentors, volunteers and community stakeholders.</p>
         </div>
@@ -59,23 +60,25 @@ export const aboutPage = `
           <figure class="partner-logo"><div><img src="${atbuLogo}" alt="" loading="lazy" /></div><figcaption>Abubakar Tafawa Balewa University</figcaption></figure>
           <figure class="partner-logo"><div><img src="${wakfLogo}" alt="" loading="lazy" /></div><figcaption>Wunti Al-Khair Foundation</figcaption></figure>
           <figure class="partner-logo"><div><img src="${bwsaLogo}" alt="" loading="lazy" /></div><figcaption>Bala Wunti Support Organisation</figcaption></figure>
+          <figure class="partner-logo"><div><img src="${dwaLogo}" alt="" loading="lazy" /></div><figcaption>Doctors Wives Association</figcaption></figure>
           <figure class="partner-logo"><div><img src="${atapLogo}" alt="" loading="lazy" /></div><figcaption>Abubakar Tatari Ali Polytechnic</figcaption></figure>
           <figure class="partner-logo"><div><img src="${fpbLogo}" alt="" loading="lazy" /></div><figcaption>The Federal Polytechnic Bauchi</figcaption></figure>
         </div>
-        <p class="additional-partners">Also working with <strong>Young Leaders Connect</strong> and <strong>Doctors Wives Bauchi</strong>.</p>
+        <p class="additional-partners">Also working with <strong>Young Leaders Connect</strong>.</p>
       </div>
     </section>
 
     <section class="impact-section section-wrap" id="impact">
       <div class="impact-copy">
-        <div class="section-label"><span>03</span> Our impact</div>
-        <h2>We believe transformation begins with opportunity.</h2>
+        
+        <h2>Our Impact</h2>
       </div>
       <div class="impact-metrics" aria-label="Impact indicators">
-        <article class="impact-metric"><strong>—</strong><span>People reached</span><small>Verified figure to be added</small></article>
-        <article class="impact-metric"><strong>14</strong><span>Programme activities</span><small>Activities listed in our profile</small></article>
-        <article class="impact-metric"><strong>08</strong><span>Named partners</span><small>Organizations listed in our profile</small></article>
-        <article class="impact-metric"><strong>—</strong><span>Awards &amp; recognition</span><small>Details to be added</small></article>
+        <article class="impact-metric"><strong>50+</strong><span>Awards recieved</span></article>
+        <article class="impact-metric"><strong>100+</strong><span>Children mentored in Public Speaking, Creative Writing, and Storytelling </span></article>
+        <article class="impact-metric"><strong>500+</strong><span>Adults mentored in Public Speaking</span></article>
+        <article class="impact-metric"><strong>200+</strong><span>Bookclub members, with over 100 books reviewed</span><small></article>
+        <article class="impact-metric"><strong>150+</strong><span>Certificates recieved for community development</span><small></article>
       </div>
     </section>
 `
