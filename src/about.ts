@@ -6,6 +6,7 @@ import dwaLogo from '../logos/DWA logo.jpg'
 import fpbLogo from '../logos/FPB logo.jpg'
 import ithacLogo from '../logos/ITHAC logo.webp'
 import wakfLogo from '../logos/WAKF logo.webp'
+import youngLeadersNetworkLogo from '../logos/young_leaders_network_logo.jpg'
 
 export const foundationLogo = logo
 
@@ -36,13 +37,12 @@ export const aboutPage = `
       </div>
       <div class="mission-vision">
         <article class="statement statement-teal">
-          <p class="eyebrow">Our Vision</p>
-          <h3>A generation ready to create positive change.</h3>
+          <h3 class="eyebrow"><strong>Our Vision</strong></h3>
+          
           <p>To build a generation of confident, knowledgeable and socially responsible individuals equipped to create positive change.</p>
         </article>
         <article class="statement statement-gold">
-          <p class="eyebrow">Our Mission</p>
-          <h3>Opportunity to learn, grow and thrive.</h3>
+          <h3 class="eyebrow"><strong>Our Mission</strong></h3>
           <p>To create accessible learning, mentorship and development opportunities that empower children, young people and women to thrive.</p>
         </article>
       </div>
@@ -63,8 +63,8 @@ export const aboutPage = `
           <figure class="partner-logo"><div><img src="${dwaLogo}" alt="" loading="lazy" /></div><figcaption>Doctors Wives Association</figcaption></figure>
           <figure class="partner-logo"><div><img src="${atapLogo}" alt="" loading="lazy" /></div><figcaption>Abubakar Tatari Ali Polytechnic</figcaption></figure>
           <figure class="partner-logo"><div><img src="${fpbLogo}" alt="" loading="lazy" /></div><figcaption>The Federal Polytechnic Bauchi</figcaption></figure>
+          <figure class="partner-logo"><div><img src="${youngLeadersNetworkLogo}" alt="" loading="lazy" /></div><figcaption>Young Leaders Network</figcaption></figure>
         </div>
-        <p class="additional-partners">Also working with <strong>Young Leaders Connect</strong>.</p>
       </div>
     </section>
 

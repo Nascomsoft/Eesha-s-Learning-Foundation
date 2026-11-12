@@ -1,6 +1,6 @@
 export const programmesSection = `
     <section class="programmes section-wrap" id="programmes">
-      <div class="section-label"><span>01</span> In action</div>
+
       <div class="programmes-grid">
         <div class="programmes-photo">
           <div class="programmes-photo-image" role="img" aria-label="Students learning together in a classroom"></div>

@@ -1,7 +1,9 @@
 import './style.css'
 import { aboutPage, foundationLogo } from './about.ts'
 import { coreValuesSection } from './coreValues.ts'
+import { contactPage } from './contact.ts'
 import { donatePage } from './donate.ts'
+import { leadershipPage } from './leadership.ts'
 import { mediaSection } from './media.ts'
 import { ourWorkSection } from './ourWork.ts'
 import { programmesSection } from './programmes.ts'
@@ -10,10 +12,15 @@ const isOurWorkPage = window.location.pathname.replace(/\/+$/, '') === '/our-wor
 const isDonatePage = window.location.pathname.replace(/\/+$/, '') === '/donate'
 const isProgrammesPage = window.location.pathname.replace(/\/+$/, '') === '/programmes'
 const isMediaPage = window.location.pathname.replace(/\/+$/, '') === '/media'
-const isHomePage = window.location.pathname === '/'
+const isLeadershipPage = window.location.pathname.replace(/\/+$/, '') === '/our-leadership'
+const isContactPage = window.location.pathname.replace(/\/+$/, '') === '/contact'
 const workPage = `${ourWorkSection}${coreValuesSection}`
 const currentPage = isDonatePage
   ? donatePage
+  : isContactPage
+  ? contactPage
+  : isLeadershipPage
+  ? leadershipPage
   : isProgrammesPage
   ? `<div class="work-page-heading section-wrap"><h1>Programmes</h1></div>${programmesSection}`
   : isMediaPage
@@ -21,20 +28,6 @@ const currentPage = isDonatePage
   : isOurWorkPage
   ? `<div class="work-page-heading section-wrap"><h1>Our Work</h1></div>${workPage}`
   : aboutPage
-const contactSection = `
-    <section class="contact-section section-wrap" id="contact">
-      <div>
-        <div class="section-label"><span>+</span> Get in touch</div>
-        <h2>Let's build a future where learning belongs to everyone.</h2>
-      </div>
-      <div class="contact-details">
-        <p class="eyebrow">Eesha's Learning Foundation</p>
-        <address>No 89 Kafin Galadima Street<br>New GRA, Bauchi, Nigeria</address>
-        <a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=No+89+Kafin+Galadima+Street+New+GRA+Bauchi+Nigeria" target="_blank" rel="noreferrer">Find us in Bauchi <span aria-hidden="true">&#8599;</span></a>
-      </div>
-    </section>
-`
-
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <header class="site-header">
     <a class="brand" href="/" aria-label="Eesha's Learning Foundation home">
@@ -49,7 +42,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         <a href="/#about">About</a>
         <button class="nav-menu-toggle" type="button" aria-label="Show About submenu" aria-expanded="false" aria-controls="about-submenu"><span aria-hidden="true">&#9662;</span></button>
         <div class="nav-submenu" id="about-submenu" hidden>
-          <a href="/#about">Our Leadership</a>
+          <a href="/our-leadership">Our Leadership</a>
         </div>
       </div>
       <a href="/our-work#core-areas">Our Work</a>
@@ -62,13 +55,12 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         </div>
       </div>
       <a class="nav-donate" href="/donate">Donate</a>
-      <a class="nav-contact" href="/#contact">Contact</a>
+      <a class="nav-contact" href="/contact">Contact</a>
     </nav>
   </header>
 
   <main>
     ${currentPage}
-    ${isHomePage ? contactSection : ''}
   </main>
 
   <footer class="site-footer">
@@ -77,6 +69,17 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       <span class="brand-name">Eesha's Learning <strong>Foundation</strong></span>
     </a>
     <p>Empowering Minds. Inspiring Voices. Building Futures.</p>
+    <nav class="footer-socials" aria-label="Social media">
+      <a href="https://www.linkedin.com/in/eesha-s-learning-foundation-716711406/" target="_blank" rel="noreferrer" aria-label="LinkedIn (opens in a new tab)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.34H4.96V9.02h2.97v9.32ZM6.45 7.75a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44Zm11.89 10.59h-2.97v-4.53c0-1.08-.02-2.47-1.51-2.47-1.51 0-1.74 1.18-1.74 2.39v4.61H9.15V9.02h2.85v1.27h.04c.4-.75 1.37-1.54 2.82-1.54 3.01 0 3.57 1.98 3.57 4.56v5.03Z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/eeshas_learning_foundation/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noreferrer" aria-label="Instagram (opens in a new tab)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61581812994342" target="_blank" rel="noreferrer" aria-label="Facebook (opens in a new tab)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8.2h2.76l.41-3.2H13.5V7.56c0-.93.26-1.56 1.6-1.56h1.7V3.14C16.5 3.05 15.43 3 14.19 3 11.6 3 9.83 4.58 9.83 7.48V9.6H7v3.2h2.83V21h3.67Z"/></svg>
+      </a>
+    </nav>
     <a href="#home" class="back-top">Back to top <span aria-hidden="true">&#8593;</span></a>
     <small>&copy; <span id="current-year"></span> Eesha's Learning Foundation</small>
   </footer>
@@ -111,6 +114,31 @@ const bindSubmenuToggle = (
 
 bindSubmenuToggle(aboutMenuToggle, aboutSubmenu, 'About')
 bindSubmenuToggle(mediaMenuToggle, mediaSubmenu, 'Media')
+
+const donationTypeButtons = document.querySelectorAll<HTMLButtonElement>('.donation-type-button')
+const donationTypeMessage = document.querySelector<HTMLElement>('#donation-type-message')
+
+donationTypeButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const donationType = button.dataset.donationType
+    if (donationType !== 'one-time' && donationType !== 'recurring') {
+      throw new Error(`Unknown donation type: ${donationType}`)
+    }
+
+    donationTypeButtons.forEach((option) => {
+      option.setAttribute('aria-pressed', String(option === button))
+    })
+    donationTypeMessage!.textContent = `Account details for ${donationType === 'one-time' ? 'one-time' : 'recurring'} donations will be added here.`
+  })
+})
+
+const contactForm = document.querySelector<HTMLFormElement>('#contact-form')
+const contactFormStatus = document.querySelector<HTMLElement>('#contact-form-status')
+
+contactForm?.addEventListener('submit', (event) => {
+  event.preventDefault()
+  contactFormStatus!.textContent = 'Your message was not sent because this form is not connected yet. Please email us directly.'
+})
 
 siteNav.querySelectorAll('a').forEach((link) => {
   link.addEventListener('click', () => {
