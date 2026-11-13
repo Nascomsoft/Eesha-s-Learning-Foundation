@@ -32,7 +32,7 @@ export const contactPage = `
 
           <section class="contact-form-panel" aria-labelledby="contact-form-title">
             <h2 id="contact-form-title">Send us a message</h2>
-            <p class="contact-form-notice">This form is not connected yet and will not send or store your information. To reach us, email <a href="mailto:eeshaslearningfoundation1@gmail.com">eeshaslearningfoundation1@gmail.com</a>.</p>
+            <p class="contact-form-notice">To reach us, email <a href="mailto:eeshaslearningfoundation1@gmail.com">eeshaslearningfoundation1@gmail.com</a>.</p>
             <form id="contact-form">
               <div class="contact-form-fields">
                 <label for="contact-name">Your name

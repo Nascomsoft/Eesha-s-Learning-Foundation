@@ -52,6 +52,9 @@ a:focus-visible {
   outline: 3px solid var(--gold);
   outline-offset: 4px;
 }
+p {
+  font-size: clamp(16px, 1.15vw, 18px);
+}
 
 ::selection {
   color: var(--navy-deep);
@@ -115,7 +118,7 @@ a:focus-visible {
 .site-nav {
   display: flex;
   align-items: center;
-  gap: clamp(17px, 2.5vw, 36px);
+  gap: clamp(12px, 1.5vw, 22px);
 }
 
 .site-nav a {
@@ -160,7 +163,7 @@ a:focus-visible {
 .nav-submenu {
   position: absolute;
   z-index: 25;
-  top: calc(100% + 10px);
+  top: 100%;
   left: -12px;
   min-width: 140px;
   padding: 5px;
@@ -293,7 +296,7 @@ p {
   max-width: 480px;
   margin-bottom: 28px;
   color: rgba(255, 255, 255, 0.8);
-  font-size: 14px;
+  font-size: clamp(16px, 1.15vw, 18px);
   line-height: 1.8;
 }
 
@@ -421,7 +424,6 @@ p {
 
 .intro-copy {
   color: #536176;
-  font-size: 13px;
   line-height: 1.85;
 }
 
@@ -544,7 +546,7 @@ p {
   max-width: 350px;
   margin-bottom: 3px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: clamp(16px, 1.15vw, 18px);
   line-height: 1.8;
 }
 
@@ -744,7 +746,7 @@ p {
 .image-tile-copy p {
   margin: 0;
   color: #fff;
-  font-size: 11px;
+  font-size: clamp(15px, 1.1vw, 17px);
   font-weight: 500;
   line-height: 1.65;
 }
@@ -806,7 +808,7 @@ p {
   max-width: 600px;
   margin: 0 auto;
   color: var(--muted);
-  font-size: 12px;
+  font-size: clamp(16px, 1.15vw, 18px);
   line-height: 1.85;
 }
 
@@ -946,7 +948,7 @@ p {
 .value-tile p {
   margin-bottom: 0;
   color: var(--muted);
-  font-size: 12px;
+  font-size: clamp(16px, 1.15vw, 18px);
   line-height: 1.7;
 }
 
@@ -976,7 +978,7 @@ p {
   max-width: 585px;
   margin-bottom: 17px;
   color: rgba(255, 255, 255, 0.73);
-  font-size: 12px;
+  font-size: clamp(16px, 1.15vw, 18px);
   line-height: 1.85;
 }
 
@@ -984,7 +986,7 @@ p {
   margin: 27px 0 14px;
   color: #f4c64d;
   font-family: var(--serif);
-  font-size: 20px;
+  font-size: clamp(18px, 1.5vw, 22px);
   line-height: 1.65;
 }
 
@@ -1075,7 +1077,7 @@ p {
 .donation-account-panel > p {
   margin-bottom: 14px;
   color: rgba(255, 255, 255, 0.76);
-  font-size: 12px;
+  font-size: clamp(16px, 1.15vw, 18px);
   line-height: 1.7;
 }
 
@@ -1137,7 +1139,7 @@ p {
   max-width: 620px;
   margin-bottom: 0;
   color: var(--muted);
-  font-size: 13px;
+  font-size: clamp(16px, 1.15vw, 18px);
   line-height: 1.8;
 }
 
@@ -1176,7 +1178,7 @@ p {
 .contact-information-item a {
   margin-bottom: 0;
   color: var(--ink);
-  font-size: 13px;
+  font-size: clamp(16px, 1.15vw, 18px);
   font-style: normal;
   line-height: 1.7;
   overflow-wrap: anywhere;
@@ -1259,7 +1261,7 @@ p {
 .contact-form-status {
   margin: 15px 0 0;
   color: #8a4c00;
-  font-size: 12px;
+  font-size: clamp(16px, 1.15vw, 18px);
   line-height: 1.6;
 }
 
@@ -1279,7 +1281,7 @@ p {
 .contact-details address {
   margin-bottom: 20px;
   color: #536176;
-  font-size: 13px;
+  font-size: clamp(16px, 1.15vw, 18px);
   font-style: normal;
   line-height: 1.8;
 }
@@ -1305,7 +1307,7 @@ p {
 .site-footer > p {
   margin-bottom: 0;
   color: rgba(255, 255, 255, 0.69);
-  font-size: 10px;
+  font-size: clamp(16px, 1.15vw, 18px);
 }
 
 .footer-socials {
@@ -1597,7 +1599,6 @@ p {
 
   .hero-copy {
     max-width: 390px;
-    font-size: 13px;
   }
 
   .hero-actions {
@@ -1769,7 +1770,7 @@ p {
   }
 
   .image-tile-copy p {
-    font-size: 10px;
+    font-size: clamp(15px, 1.1vw, 17px);
   }
 
   .contact-section {

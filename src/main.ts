@@ -104,11 +104,37 @@ const bindSubmenuToggle = (
   submenu: HTMLElement,
   label: string,
 ) => {
+  const dropdown = toggle.closest<HTMLElement>('.nav-dropdown')!
+  const isDesktopHover = () => window.matchMedia('(hover: hover) and (min-width: 901px)').matches
+  const setExpanded = (expanded: boolean) => {
+    toggle.setAttribute('aria-expanded', String(expanded))
+    toggle.setAttribute('aria-label', `${expanded ? 'Hide' : 'Show'} ${label} submenu`)
+    submenu.hidden = !expanded
+  }
+
+  dropdown.addEventListener('pointerenter', () => {
+    if (isDesktopHover()) setExpanded(true)
+  })
+
+  dropdown.addEventListener('pointerleave', () => {
+    if (isDesktopHover() && !dropdown.contains(document.activeElement)) {
+      setExpanded(false)
+    }
+  })
+
+  dropdown.addEventListener('focusin', () => {
+    if (isDesktopHover()) setExpanded(true)
+  })
+  dropdown.addEventListener('focusout', (event) => {
+    const nextTarget = event.relatedTarget
+    if (!(nextTarget instanceof Node) || !dropdown.contains(nextTarget)) {
+      setExpanded(false)
+    }
+  })
+
   toggle.addEventListener('click', () => {
-    const isExpanded = toggle.getAttribute('aria-expanded') === 'true'
-    toggle.setAttribute('aria-expanded', String(!isExpanded))
-    toggle.setAttribute('aria-label', `${isExpanded ? 'Show' : 'Hide'} ${label} submenu`)
-    submenu.hidden = isExpanded
+    if (isDesktopHover()) return
+    setExpanded(toggle.getAttribute('aria-expanded') !== 'true')
   })
 }
 
