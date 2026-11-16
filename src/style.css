@@ -118,7 +118,7 @@ p {
 .site-nav {
   display: flex;
   align-items: center;
-  gap: clamp(12px, 1.5vw, 22px);
+  gap: clamp(8px, 1.1vw, 16px);
 }
 
 .site-nav a {
@@ -131,49 +131,6 @@ p {
 
 .site-nav a:hover {
   color: #008b85;
-}
-
-.nav-dropdown {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 3px;
-}
-
-.nav-menu-toggle {
-  display: grid;
-  width: 24px;
-  height: 32px;
-  place-items: center;
-  padding: 0;
-  border: 0;
-  color: #37445a;
-  background: transparent;
-  cursor: pointer;
-}
-
-.nav-menu-toggle span {
-  transition: transform 160ms ease;
-}
-
-.nav-menu-toggle[aria-expanded='true'] span {
-  transform: rotate(180deg);
-}
-
-.nav-submenu {
-  position: absolute;
-  z-index: 25;
-  top: 100%;
-  left: -12px;
-  min-width: 140px;
-  padding: 5px;
-  background: white;
-  box-shadow: 0 8px 22px rgba(4, 26, 56, 0.16);
-}
-
-.nav-submenu a {
-  display: block;
-  padding: 11px 12px;
 }
 
 .site-nav .nav-donate {
@@ -480,11 +437,26 @@ p {
   background: #eeede7;
 }
 
+.leadership-heading {
+  margin: 0 0 35px;
+  color: var(--navy);
+  font-family: var(--serif);
+  font-size: clamp(38px, 4vw, 52px);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
 .leadership-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
   gap: clamp(40px, 8vw, 100px);
   align-items: start;
+}
+
+.leadership-intro {
+  position: sticky;
+  top: 100px;
+  align-self: start;
 }
 
 .leadership-portrait {
@@ -573,113 +545,55 @@ p {
   padding-bottom: 108px;
 }
 
-.programmes-grid {
-  display: grid;
-  grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(40px, 8vw, 105px);
-  align-items: center;
-}
-
-.programmes-photo {
-  display: flex;
-  flex-direction: column;
-}
-
-.programmes-photo-image {
-  min-height: 500px;
-  background-color: #9daea7;
-  background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1100&q=85');
-  background-position: center;
-  background-size: cover;
-}
-
-.programmes-photo span {
-  display: block;
-  padding: 22px 25px;
-  color: white;
-  font-family: var(--serif);
-  font-size: 25px;
-  line-height: 1.2;
-  background: var(--navy);
-}
-
 .programmes-content > .eyebrow {
   margin-bottom: 17px;
 }
 
 .programmes-content h2 {
-  max-width: 470px;
+  max-width: 700px;
   margin-bottom: 17px;
   font-size: clamp(34px, 3.8vw, 47px);
 }
 
 .programmes-content > p:not(.eyebrow) {
-  max-width: 490px;
+  max-width: 700px;
   margin-bottom: 25px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: clamp(16px, 1.15vw, 18px);
   line-height: 1.8;
 }
 
-.programme-list {
+.programme-quotes {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 11px 23px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 12px;
+}
+
+.programme-quote {
+  display: flex;
+  min-height: 130px;
+  align-items: center;
+  gap: 12px;
   margin: 0;
-  padding: 0;
-  list-style: none;
+  padding: 22px;
+  border-top: 3px solid var(--gold);
+  background: white;
 }
 
-.programme-list li {
-  position: relative;
-  padding-left: 14px;
-  color: #334258;
-  font-size: 10px;
-  line-height: 1.55;
-}
-
-.programme-list li::before {
-  position: absolute;
-  top: 5px;
-  left: 0;
-  width: 6px;
-  height: 6px;
-  background: var(--teal);
-  content: '';
-}
-
-.programme-list li:nth-child(3n + 1)::before {
-  background: var(--gold);
-}
-
-.media-section {
-  padding: 86px 0 98px;
-  background: #e9f2ef;
-}
-
-.blog-subsection {
-  margin-top: 34px;
-  padding: 25px 0 6px;
-  border-top: 1px solid rgba(6, 38, 83, 0.18);
-}
-
-.blog-subsection .eyebrow {
-  margin-bottom: 10px;
-}
-
-.blog-subsection h3 {
-  margin-bottom: 8px;
-  color: var(--navy);
+.programme-quote::before {
+  align-self: flex-start;
+  color: var(--teal);
+  content: '\201C';
   font-family: var(--serif);
-  font-size: 28px;
-  font-weight: 400;
+  font-size: 32px;
+  line-height: 1;
 }
 
-.blog-subsection > p:last-child {
-  margin-bottom: 0;
+.programme-quote p {
+  margin: 0;
   color: var(--muted);
-  font-size: 12px;
-  line-height: 1.8;
+  font-size: clamp(16px, 1.15vw, 18px);
+  line-height: 1.7;
 }
 
 .image-tile {
@@ -1444,41 +1358,6 @@ p {
     text-align: center;
   }
 
-  .site-nav .nav-dropdown {
-    display: grid;
-    grid-template-columns: 1fr 42px;
-    width: 100%;
-    gap: 0;
-  }
-
-  .site-nav .nav-dropdown > a {
-    display: flex;
-    align-items: center;
-    padding: 13px 0;
-    border-bottom: 1px solid rgba(6, 38, 83, 0.1);
-  }
-
-  .site-nav .nav-menu-toggle {
-    width: 42px;
-    height: 44px;
-    justify-self: end;
-    border-bottom: 1px solid rgba(6, 38, 83, 0.1);
-  }
-
-  .site-nav .nav-submenu {
-    position: static;
-    grid-column: 1 / -1;
-    min-width: 0;
-    padding: 0 0 0 14px;
-    background: transparent;
-    box-shadow: none;
-  }
-
-  .site-nav .nav-submenu a {
-    padding: 11px 0;
-    border-bottom: 1px solid rgba(6, 38, 83, 0.1);
-  }
-
   .hero {
     min-height: 610px;
     min-height: min(700px, calc(100svh - 70px));
@@ -1496,10 +1375,13 @@ p {
   .intro-grid,
   .contact-page-grid,
   .leadership-grid,
-  .programmes-grid,
   .future-grid {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+
+  .leadership-intro {
+    position: static;
   }
 
   .intro-grid {
@@ -1508,18 +1390,6 @@ p {
 
   .intro h2 {
     max-width: 620px;
-  }
-
-  .programmes-grid {
-    gap: 35px;
-  }
-
-  .programmes-photo {
-    min-height: 0;
-  }
-
-  .programmes-photo-image {
-    min-height: 440px;
   }
 
   .partner-logo-grid {
@@ -1540,6 +1410,10 @@ p {
   }
 
   .values-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .programme-quotes {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1689,7 +1563,6 @@ p {
 
   .core-section,
   .leadership-section,
-  .media-section,
   .partnerships-section,
   .values-section,
   .future-section {
@@ -1706,27 +1579,6 @@ p {
 
   .section-heading-row > p {
     max-width: 440px;
-  }
-
-  .programmes-grid {
-    gap: 29px;
-  }
-
-  .programmes-photo {
-    min-height: 0;
-  }
-
-  .programmes-photo-image {
-    min-height: 390px;
-    background-position: center;
-  }
-
-  .programme-list {
-    gap: 11px 12px;
-  }
-
-  .programme-list li {
-    font-size: 10px;
   }
 
   .partnerships-section h2,

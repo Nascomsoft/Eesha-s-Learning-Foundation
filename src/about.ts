@@ -19,7 +19,7 @@ export const aboutPage = `
         <p class="hero-tagline">Empowering minds. Inspiring voices. Building futures.</p>
         <p class="hero-copy">Creating room for children, young people and women to learn, find their voice and shape what comes next.</p>
         <div class="hero-actions">
-          <a class="button button-gold" href="/our-work#core-areas">Explore our work <span aria-hidden="true">&#8594;</span></a>
+          <a class="button button-gold" href="#core-areas">Explore our work <span aria-hidden="true">&#8594;</span></a>
           <a class="text-link light-link" href="#about">Discover our story</a>
         </div>
       </div>

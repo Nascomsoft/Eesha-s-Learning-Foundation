@@ -4,33 +4,20 @@ import { coreValuesSection } from './coreValues.ts'
 import { contactPage } from './contact.ts'
 import { donatePage } from './donate.ts'
 import { leadershipPage } from './leadership.ts'
-import { mediaSection } from './media.ts'
 import { ourWorkSection } from './ourWork.ts'
 import { programmesSection } from './programmes.ts'
 
-const isOurWorkPage = window.location.pathname.replace(/\/+$/, '') === '/our-work'
-const isDonatePage = window.location.pathname.replace(/\/+$/, '') === '/donate'
-const isProgrammesPage = window.location.pathname.replace(/\/+$/, '') === '/programmes'
-const isMediaPage = window.location.pathname.replace(/\/+$/, '') === '/media'
-const isLeadershipPage = window.location.pathname.replace(/\/+$/, '') === '/our-leadership'
-const isContactPage = window.location.pathname.replace(/\/+$/, '') === '/contact'
 const workPage = `${ourWorkSection}${coreValuesSection}`
-const currentPage = isDonatePage
+const onePageContent = `${aboutPage}${workPage}${programmesSection}${leadershipPage}`
+const currentPath = window.location.pathname.replace(/\/+$/, '') || '/'
+const currentPage = currentPath === '/donate'
   ? donatePage
-  : isContactPage
+  : currentPath === '/contact'
   ? contactPage
-  : isLeadershipPage
-  ? leadershipPage
-  : isProgrammesPage
-  ? `<div class="work-page-heading section-wrap"><h1>Programmes</h1></div>${programmesSection}`
-  : isMediaPage
-  ? `<div class="work-page-heading section-wrap"><h1>Media</h1></div>${mediaSection}`
-  : isOurWorkPage
-  ? `<div class="work-page-heading section-wrap"><h1>Our Work</h1></div>${workPage}`
-  : aboutPage
+  : onePageContent
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <header class="site-header">
-    <a class="brand" href="/" aria-label="Eesha's Learning Foundation home">
+    <a class="brand" href="/#home" aria-label="Eesha's Learning Foundation home">
       <span class="brand-mark" aria-hidden="true"><img src="${foundationLogo}" alt="" /></span>
       <span class="brand-name">Eesha's Learning <strong>Foundation</strong></span>
     </a>
@@ -38,22 +25,11 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       <span></span><span></span>
     </button>
     <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-      <div class="nav-dropdown">
-        <a href="/#about">About</a>
-        <button class="nav-menu-toggle" type="button" aria-label="Show About submenu" aria-expanded="false" aria-controls="about-submenu"><span aria-hidden="true">&#9662;</span></button>
-        <div class="nav-submenu" id="about-submenu" hidden>
-          <a href="/our-leadership">Our Leadership</a>
-        </div>
-      </div>
-      <a href="/our-work#core-areas">Our Work</a>
-      <a href="/programmes">Programmes</a>
-      <div class="nav-dropdown">
-        <a href="/media">Media</a>
-        <button class="nav-menu-toggle" type="button" aria-label="Show Media submenu" aria-expanded="false" aria-controls="media-submenu"><span aria-hidden="true">&#9662;</span></button>
-        <div class="nav-submenu" id="media-submenu" hidden>
-          <a href="/media#blog">Blog</a>
-        </div>
-      </div>
+      <a href="/#home">Home</a>
+      <a href="/#about">About</a>
+      <a href="/#core-areas">Our Work</a>
+      <a href="/#programmes">Programmes</a>
+      <a href="/#leadership">Our Leadership</a>
       <a class="nav-donate" href="/donate">Donate</a>
       <a class="nav-contact" href="/contact">Contact</a>
     </nav>
@@ -64,7 +40,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   </main>
 
   <footer class="site-footer">
-    <a class="brand footer-brand" href="/">
+    <a class="brand footer-brand" href="/#home">
       <span class="brand-mark" aria-hidden="true"><img src="${foundationLogo}" alt="" /></span>
       <span class="brand-name">Eesha's Learning <strong>Foundation</strong></span>
     </a>
@@ -80,17 +56,13 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8.2h2.76l.41-3.2H13.5V7.56c0-.93.26-1.56 1.6-1.56h1.7V3.14C16.5 3.05 15.43 3 14.19 3 11.6 3 9.83 4.58 9.83 7.48V9.6H7v3.2h2.83V21h3.67Z"/></svg>
       </a>
     </nav>
-    <a href="#home" class="back-top">Back to top <span aria-hidden="true">&#8593;</span></a>
+    <a href="/#home" class="back-top">Back to top <span aria-hidden="true">&#8593;</span></a>
     <small>&copy; <span id="current-year"></span> Eesha's Learning Foundation</small>
   </footer>
 `
 
 const menuToggle = document.querySelector<HTMLButtonElement>('.menu-toggle')!
 const siteNav = document.querySelector<HTMLElement>('.site-nav')!
-const aboutMenuToggle = document.querySelector<HTMLButtonElement>('[aria-controls="about-submenu"]')!
-const aboutSubmenu = document.querySelector<HTMLElement>('#about-submenu')!
-const mediaMenuToggle = document.querySelector<HTMLButtonElement>('[aria-controls="media-submenu"]')!
-const mediaSubmenu = document.querySelector<HTMLElement>('#media-submenu')!
 
 menuToggle.addEventListener('click', () => {
   const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true'
@@ -98,48 +70,6 @@ menuToggle.addEventListener('click', () => {
   menuToggle.setAttribute('aria-label', isExpanded ? 'Open navigation' : 'Close navigation')
   siteNav.classList.toggle('is-open', !isExpanded)
 })
-
-const bindSubmenuToggle = (
-  toggle: HTMLButtonElement,
-  submenu: HTMLElement,
-  label: string,
-) => {
-  const dropdown = toggle.closest<HTMLElement>('.nav-dropdown')!
-  const isDesktopHover = () => window.matchMedia('(hover: hover) and (min-width: 901px)').matches
-  const setExpanded = (expanded: boolean) => {
-    toggle.setAttribute('aria-expanded', String(expanded))
-    toggle.setAttribute('aria-label', `${expanded ? 'Hide' : 'Show'} ${label} submenu`)
-    submenu.hidden = !expanded
-  }
-
-  dropdown.addEventListener('pointerenter', () => {
-    if (isDesktopHover()) setExpanded(true)
-  })
-
-  dropdown.addEventListener('pointerleave', () => {
-    if (isDesktopHover() && !dropdown.contains(document.activeElement)) {
-      setExpanded(false)
-    }
-  })
-
-  dropdown.addEventListener('focusin', () => {
-    if (isDesktopHover()) setExpanded(true)
-  })
-  dropdown.addEventListener('focusout', (event) => {
-    const nextTarget = event.relatedTarget
-    if (!(nextTarget instanceof Node) || !dropdown.contains(nextTarget)) {
-      setExpanded(false)
-    }
-  })
-
-  toggle.addEventListener('click', () => {
-    if (isDesktopHover()) return
-    setExpanded(toggle.getAttribute('aria-expanded') !== 'true')
-  })
-}
-
-bindSubmenuToggle(aboutMenuToggle, aboutSubmenu, 'About')
-bindSubmenuToggle(mediaMenuToggle, mediaSubmenu, 'Media')
 
 const donationTypeButtons = document.querySelectorAll<HTMLButtonElement>('.donation-type-button')
 const donationTypeMessage = document.querySelector<HTMLElement>('#donation-type-message')
@@ -154,7 +84,7 @@ donationTypeButtons.forEach((button) => {
     donationTypeButtons.forEach((option) => {
       option.setAttribute('aria-pressed', String(option === button))
     })
-    donationTypeMessage!.textContent = `Account details for ${donationType === 'one-time' ? 'one-time' : 'recurring'} donations will be added here.`
+    donationTypeMessage!.textContent = `You selected ${donationType === 'one-time' ? 'one-time' : 'recurring'} donations. Use the Foundation account details below to contribute.`
   })
 })
 
@@ -171,12 +101,6 @@ siteNav.querySelectorAll('a').forEach((link) => {
     menuToggle.setAttribute('aria-expanded', 'false')
     menuToggle.setAttribute('aria-label', 'Open navigation')
     siteNav.classList.remove('is-open')
-    aboutMenuToggle.setAttribute('aria-expanded', 'false')
-    aboutMenuToggle.setAttribute('aria-label', 'Show About submenu')
-    aboutSubmenu.hidden = true
-    mediaMenuToggle.setAttribute('aria-expanded', 'false')
-    mediaMenuToggle.setAttribute('aria-label', 'Show Media submenu')
-    mediaSubmenu.hidden = true
   })
 })
 

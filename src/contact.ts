@@ -1,5 +1,5 @@
 export const contactPage = `
-    <section class="contact-page" aria-labelledby="contact-title">
+    <section class="contact-page" id="contact" aria-labelledby="contact-title">
       <div class="section-wrap">
         <header class="contact-page-heading">
           <p class="section-label"><span>Get in touch</span></p>

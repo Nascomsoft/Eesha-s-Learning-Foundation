@@ -14,7 +14,7 @@ export const donatePage = `
           </div>
           <div class="donation-account-panel">
             <h4>Foundation account details</h4>
-            <p id="donation-type-message" aria-live="polite">Account details for one-time donations will be added here.</p>
+            <p id="donation-type-message" aria-live="polite">You selected one-time donations. Use the Foundation account details below to contribute.</p>
             <dl class="account-details-list">
               <div><dt>Account name</dt><dd>Eesha's Learning Foundation</dd></div>
               <div><dt>Bank</dt><dd>FCMB</dd></div>
