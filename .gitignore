@@ -6,7 +6,8 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-
+# cd "C:\Users\USER\Desktop\Eesha Learning Foundation\Eesha-s-Learning-Foundation"
+# npm run dev
 node_modules
 dist
 dist-ssr

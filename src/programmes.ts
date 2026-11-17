@@ -1,17 +1,18 @@
 export const programmesSection = `
-    <section class="programmes section-wrap" id="programmes">
-      <div class="programmes-content">
-        
-        <h2>Our Programmes and Activities</h2>
-        <p>From reading together to trying something new, our activities give young people space to build skills, confidence and connection.</p>
+    <section class="programmes" id="programmes">
+      <div class="section-wrap">
+        <div class="section-heading-row">
+          <h2>Our Programmes and Activities</h2>
+      
+        </div>
         <div class="programme-quotes">
-          <article class="programme-quote" id="book-club"><p>Eesha's Book Club Society</p></article>
-          <article class="programme-quote" id="childrens-mentorship"><p>Children's mentorship sessions</p></article>
-          <article class="programme-quote" id="public-speaking"><p>Public speaking mentorship</p></article>
-          <article class="programme-quote" id="reading-culture"><p>Read-aloud sessions</p></article>
-          <article class="programme-quote" id="poetry-storytelling"><p>Poetry and storytelling programmes</p></article>
-          <article class="programme-quote" id="talent-development"><p>Talent discovery initiatives</p></article>
-          <article class="programme-quote" id="creative-workshops"><p>Creative and educational workshops</p></article>
+          <article class="programme-quote" id="book-club"><p><strong>Eesha's Book Club Society</strong></p></article>
+          <article class="programme-quote" id="childrens-mentorship"><p><strong>Children's Mentorship Sessions</strong></p></article>
+          <article class="programme-quote" id="public-speaking"><p><strong>Public Speaking Mentorship</strong></p></article>
+          <article class="programme-quote" id="reading-culture"><p><strong>Read-aloud Sessions</strong></p></article>
+          <article class="programme-quote" id="poetry-storytelling"><p><strong>Poetry and Storytelling Programmes</strong></p></article>
+          <article class="programme-quote" id="talent-development"><p><strong>Talent Discovery Initiatives</strong></p></article>
+          <article class="programme-quote" id="creative-workshops"><p><strong>Creative and Educational Workshops</strong></p></article>
         </div>
       </div>
     </section>

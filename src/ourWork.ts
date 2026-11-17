@@ -11,8 +11,8 @@ export const ourWorkSection = `
       <div class="section-wrap">
         
         <div class="section-heading-row">
-          <h2>Our core areas</h2>
-          <p>We create practical ways for people to learn, express themselves and contribute to their communities.</p>
+          <h2>Our Core Areas</h2>
+          
         </div>
         <div class="core-grid">
           <article class="image-tile core-item"><img src="${literacyImage}" alt="A child smiling at a community learning event" loading="lazy" /><div class="image-tile-copy"><h3>Literacy &amp; reading culture</h3><p>Book clubs, reading sessions, read-alouds and storytelling that help children build a lasting relationship with books and knowledge.</p><a class="core-tile-link" href="#reading-culture" aria-label="See more about literacy and reading culture">See more <span aria-hidden="true">&#8594;</span></a></div></article>

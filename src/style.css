@@ -384,6 +384,14 @@ p {
   line-height: 1.85;
 }
 
+.about-elf-image {
+  display: block;
+  width: 100%;
+  max-height: 420px;
+  margin-top: 24px;
+  object-fit: cover;
+}
+
 .intro-copy p + p {
   margin-top: 17px;
 }
@@ -543,56 +551,45 @@ p {
 .programmes {
   padding-top: 106px;
   padding-bottom: 108px;
+  color: white;
+  background: var(--navy);
 }
 
-.programmes-content > .eyebrow {
-  margin-bottom: 17px;
+.programmes .section-heading-row {
+  margin-bottom: 31px;
 }
 
-.programmes-content h2 {
-  max-width: 700px;
-  margin-bottom: 17px;
-  font-size: clamp(34px, 3.8vw, 47px);
+.programmes .section-heading-row h2 {
+  color: white;
 }
 
-.programmes-content > p:not(.eyebrow) {
-  max-width: 700px;
-  margin-bottom: 25px;
-  color: var(--muted);
-  font-size: clamp(16px, 1.15vw, 18px);
-  line-height: 1.8;
+.programmes .section-heading-row > p {
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .programme-quotes {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
   gap: 12px;
 }
 
 .programme-quote {
   display: flex;
-  min-height: 130px;
+  min-height: 180px;
   align-items: center;
   gap: 12px;
   margin: 0;
-  padding: 22px;
-  border-top: 3px solid var(--gold);
-  background: white;
-}
-
-.programme-quote::before {
-  align-self: flex-start;
-  color: var(--teal);
-  content: '\201C';
-  font-family: var(--serif);
-  font-size: 32px;
-  line-height: 1;
+  padding: 22px 18px;
+  border-left: 3px solid var(--gold);
+  background: var(--navy);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.24);
 }
 
 .programme-quote p {
   margin: 0;
-  color: var(--muted);
-  font-size: clamp(16px, 1.15vw, 18px);
+  color: #fff;
+  font-size: clamp(15px, 1.1vw, 17px);
+  font-weight: 500;
   line-height: 1.7;
 }
 
@@ -690,7 +687,7 @@ p {
 }
 
 .partnerships-section {
-  padding: 92px 0 96px;
+  padding: 92px 0 0px;
   color: var(--ink);
   background: #edf2ef;
 }
@@ -700,9 +697,11 @@ p {
 }
 
 .partnerships-intro {
-  max-width: 700px;
-  margin: 0 auto 38px;
-  text-align: center;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 45px;
+  margin-bottom: 38px;
 }
 
 .partnerships-intro .section-label {
@@ -710,7 +709,7 @@ p {
 }
 
 .partnerships-section h2 {
-  margin-bottom: 12px;
+  margin-bottom: 0;
   color: var(--navy);
   font-family: var(--serif);
   font-size: clamp(38px, 4vw, 52px);
@@ -719,11 +718,11 @@ p {
 }
 
 .partnerships-copy {
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 350px;
+  margin: 0 0 3px;
   color: var(--muted);
   font-size: clamp(16px, 1.15vw, 18px);
-  line-height: 1.85;
+  line-height: 1.8;
 }
 
 .partner-logo-grid {
@@ -1544,7 +1543,6 @@ p {
 
   .intro h2,
   .section-heading-row h2,
-  .programmes-content h2,
   .impact-copy h2,
   .contact-section h2 {
     font-size: 37px;
@@ -1584,6 +1582,17 @@ p {
   .partnerships-section h2,
   .future-section h2 {
     font-size: 40px;
+  }
+
+  .partnerships-intro {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .partnerships-copy {
+    max-width: 440px;
+    margin-bottom: 0;
   }
 
   .partner-logo-grid {

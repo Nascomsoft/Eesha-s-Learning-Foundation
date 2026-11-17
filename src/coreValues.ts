@@ -3,8 +3,8 @@ export const coreValuesSection = `
       <div class="section-wrap">
         <div class="section-label"></div>
         <div class="section-heading-row">
-          <h2>Our core values</h2>
-          <p>The principles behind how we learn, work and serve.</p>
+          <h2>Our Core Values</h2>
+         
         </div>
         <div class="values-grid">
           <article class="value-tile"><h3>Learning</h3><p>Knowledge is a lifelong journey.</p></article>

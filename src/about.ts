@@ -7,6 +7,7 @@ import fpbLogo from '../logos/FPB logo.jpg'
 import ithacLogo from '../logos/ITHAC logo.webp'
 import wakfLogo from '../logos/WAKF logo.webp'
 import youngLeadersNetworkLogo from '../logos/young_leaders_network_logo.jpg'
+import aboutElfImage from '../Images/About ELF.webp'
 
 export const foundationLogo = logo
 
@@ -29,7 +30,10 @@ export const aboutPage = `
     <section class="intro section-wrap" id="about">
       
       <div class="intro-grid">
-        <h2>Every child deserves the chance to discover their potential.</h2>
+        <div class="intro-heading">
+          <h2>About ELF</h2>
+          <img class="about-elf-image" src="${aboutElfImage}" alt="Eesha's Learning Foundation community activity" loading="lazy" />
+        </div>
         <div class="intro-copy">
           <p>Eesha's Learning Foundation (ELF) is a community-focused educational and development organization established in 2024 and founded by Aishatu Hassan. The Foundation was created from a simple but powerful belief: every child, young person and woman deserves access to knowledge, mentorship, opportunities and a platform to discover and express their potential.</p>
           <p>Based in Bauchi, Nigeria, ELF works where education, literacy, mentorship, leadership, talent development, innovation and community development meet. Learning here goes beyond the classroom: it is a chance to think critically, communicate confidently and imagine new possibilities.</p>
@@ -53,7 +57,7 @@ export const aboutPage = `
         <div class="partnerships-intro">
           
           <h2>Our Partners</h2>
-          <p class="partnerships-copy">Sustainable impact cannot be achieved in isolation. ELF works with institutions, organizations, professionals, mentors, volunteers and community stakeholders.</p>
+          
         </div>
         <div class="partner-logo-grid">
           <figure class="partner-logo"><div><img src="${ithacLogo}" alt="" loading="lazy" /></div><figcaption>Information Technologies Hub and Cynosure</figcaption></figure>
