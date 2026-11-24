@@ -22,6 +22,21 @@
   box-sizing: border-box;
 }
 
+img {
+  border-radius: 15px;
+}
+
+html.scroll-reveal-enabled .scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 650ms ease, transform 650ms cubic-bezier(0.2, 0.7, 0.25, 1);
+}
+
+html.scroll-reveal-enabled .scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 82px;
@@ -593,6 +608,121 @@ p {
   line-height: 1.7;
 }
 
+.consultancy-section {
+  padding: 88px 0 96px;
+  background: #f7f6f1;
+}
+
+.consultancy-section .section-heading-row {
+  margin-bottom: 31px;
+}
+
+.consultancy-intro {
+  margin-bottom: 44px;
+  padding: 30px 34px;
+  border-left: 5px solid var(--gold);
+  color: white;
+  background: var(--navy);
+}
+
+.consultancy-intro-copy {
+  max-width: 610px;
+}
+
+.consultancy-intro-copy .consultancy-eyebrow {
+  margin: 0 0 10px;
+  color: #75d6ce;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.consultancy-intro-copy h3,
+.consultancy-services-heading h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(24px, 2.4vw, 32px);
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.consultancy-intro-copy > p:last-child {
+  max-width: 540px;
+  margin: 10px 0 0;
+  color: rgba(255, 255, 255, 0.76);
+  line-height: 1.7;
+}
+
+.consultancy-services-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.consultancy-services-heading h3 {
+  color: var(--navy);
+  font-size: 26px;
+}
+
+.consultancy-services-heading p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.consultancy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 12px;
+}
+
+.consultancy-card {
+  min-height: 190px;
+  padding: 24px;
+  border-top: 4px solid var(--teal);
+  background: white;
+  box-shadow: 0 4px 18px rgba(4, 26, 56, 0.08);
+}
+
+.consultancy-card:nth-child(even) {
+  border-top-color: var(--gold);
+}
+
+.consultancy-card h3 {
+  margin-bottom: 24px;
+  color: var(--navy);
+  font-family: var(--serif);
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.consultancy-card .consultancy-price {
+  margin: 0;
+  color: var(--navy);
+  font-size: clamp(20px, 1.8vw, 26px);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.consultancy-price span {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.consultancy-card .consultancy-schedule {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: clamp(16px, 1.15vw, 18px);
+  line-height: 1.6;
+}
+
+.consultancy-cta {
+  margin-top: 25px;
+}
+
 .image-tile {
   --image-tile-height: 350px;
   --image-tile-panel-height: 200px;
@@ -1054,6 +1184,65 @@ p {
   color: var(--muted);
   font-size: clamp(16px, 1.15vw, 18px);
   line-height: 1.8;
+}
+
+.service-inquiry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 42px;
+  padding: 28px 32px;
+  border-left: 5px solid var(--gold);
+  color: white;
+  background: var(--navy);
+}
+
+.service-inquiry .consultancy-eyebrow {
+  margin: 0 0 8px;
+  color: #75d6ce;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.service-inquiry h2 {
+  margin: 0;
+  color: white;
+  font-family: var(--serif);
+  font-size: clamp(25px, 3vw, 34px);
+  font-weight: 400;
+}
+
+.service-inquiry > div > p:last-child {
+  max-width: 620px;
+  margin: 9px 0 0;
+  color: rgba(255, 255, 255, 0.76);
+  line-height: 1.7;
+}
+
+.service-inquiry-fee {
+  flex: 0 0 auto;
+  margin: 0;
+  padding-left: 28px;
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.service-inquiry-fee span,
+.service-inquiry-fee strong {
+  display: block;
+}
+
+.service-inquiry-fee span {
+  margin-bottom: 6px;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 14px;
+}
+
+.service-inquiry-fee strong {
+  color: var(--gold);
+  font-size: clamp(27px, 3vw, 36px);
 }
 
 .contact-page-grid {
@@ -1579,6 +1768,30 @@ p {
     max-width: 440px;
   }
 
+  .consultancy-intro {
+    margin-bottom: 36px;
+    padding: 25px 22px;
+  }
+
+  .service-inquiry {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 34px;
+    padding: 24px 20px;
+  }
+
+  .service-inquiry-fee {
+    padding: 0;
+    border: 0;
+  }
+
+  .consultancy-services-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
   .partnerships-section h2,
   .future-section h2 {
     font-size: 40px;
@@ -1673,6 +1886,11 @@ p {
     scroll-behavior: auto !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    transition-duration: 0.1s !important;
+  }
+
+  html.scroll-reveal-enabled .scroll-reveal {
+    opacity: 1;
+    transform: none;
   }
 }

@@ -7,6 +7,15 @@ export const contactPage = `
           <p>For questions, partnership enquiries, or more information about Eesha's Learning Foundation, contact us or leave a message below.</p>
         </header>
 
+        <section class="service-inquiry" id="service-inquiry" aria-labelledby="service-inquiry-title">
+          <div>
+            <p class="consultancy-eyebrow">Consultancy &amp; services</p>
+            <h2 id="service-inquiry-title">Interested in a service?</h2>
+            <p>Use the form below to tell us what you're interested in or ask a question.</p>
+          </div>
+          <p class="service-inquiry-fee"><span>Consultation fee</span><strong>₦5,000</strong></p>
+        </section>
+
         <div class="contact-page-grid">
           <section class="contact-information" aria-labelledby="contact-information-title">
             <h2 id="contact-information-title">Contact information</h2>
@@ -23,6 +32,7 @@ export const contactPage = `
               <p><a href="https://www.linkedin.com/in/eesha-s-learning-foundation-716711406/" target="_blank" rel="noreferrer">LinkedIn</a></p>
               <p><a href="https://www.instagram.com/eeshas_learning_foundation/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noreferrer">Instagram</a></p>
               <p><a href="https://www.facebook.com/profile.php?id=61581812994342" target="_blank" rel="noreferrer">Facebook</a></p>
+              <p><a href="https://www.tiktok.com/@eeshaslearningfoundation" target="_blank" rel="noreferrer">TikTok</a></p>
             </div>
             <div class="contact-information-item">
               <h3>Address</h3>

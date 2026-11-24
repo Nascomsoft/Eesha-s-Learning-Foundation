@@ -2,13 +2,14 @@ import './style.css'
 import { aboutPage, foundationLogo } from './about.ts'
 import { coreValuesSection } from './coreValues.ts'
 import { contactPage } from './contact.ts'
+import { consultancySection } from './consultancy.ts'
 import { donatePage } from './donate.ts'
 import { leadershipPage } from './leadership.ts'
 import { ourWorkSection } from './ourWork.ts'
 import { programmesSection } from './programmes.ts'
 
 const workPage = `${ourWorkSection}${coreValuesSection}`
-const onePageContent = `${aboutPage}${workPage}${programmesSection}${leadershipPage}`
+const onePageContent = `${aboutPage}${workPage}${programmesSection}${consultancySection}${leadershipPage}`
 const currentPath = window.location.pathname.replace(/\/+$/, '') || '/'
 const currentPage = currentPath === '/donate'
   ? donatePage
@@ -29,6 +30,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       <a href="/#about">About</a>
       <a href="/#core-areas">Our Work</a>
       <a href="/#programmes">Programmes</a>
+      <a href="/#consultancy">Consultancy &amp; Services</a>
       <a href="/#leadership">Our Leadership</a>
       <a class="nav-donate" href="/donate">Donate</a>
       <a class="nav-contact" href="/contact">Contact</a>
@@ -55,6 +57,9 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       <a href="https://www.facebook.com/profile.php?id=61581812994342" target="_blank" rel="noreferrer" aria-label="Facebook (opens in a new tab)">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8.2h2.76l.41-3.2H13.5V7.56c0-.93.26-1.56 1.6-1.56h1.7V3.14C16.5 3.05 15.43 3 14.19 3 11.6 3 9.83 4.58 9.83 7.48V9.6H7v3.2h2.83V21h3.67Z"/></svg>
       </a>
+      <a href="https://www.tiktok.com/@eeshaslearningfoundation" target="_blank" rel="noreferrer" aria-label="TikTok (opens in a new tab)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.28V2h-3.57v13.67a2.89 2.89 0 1 1-2.89-2.89c.3 0 .59.05.86.13V9.27a6.46 6.46 0 1 0 5.6 6.4V8.72a8.35 8.35 0 0 0 4.88 1.57V6.73c-.37 0-.74-.01-1.11-.04Z"/></svg>
+      </a>
     </nav>
     <a href="/#home" class="back-top">Back to top <span aria-hidden="true">&#8593;</span></a>
     <small>&copy; <span id="current-year"></span> Eesha's Learning Foundation</small>
@@ -63,6 +68,55 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
 const menuToggle = document.querySelector<HTMLButtonElement>('.menu-toggle')!
 const siteNav = document.querySelector<HTMLElement>('.site-nav')!
+
+const scrollRevealTargets = document.querySelectorAll<HTMLElement>([
+  '.intro-grid > *',
+  '.mission-vision > *',
+  '.partnerships-intro > *',
+  '.partner-logo',
+  '.impact-copy',
+  '.impact-metric',
+  '.core-section .section-heading-row > *',
+  '.core-item',
+  '.values-section .section-heading-row > *',
+  '.value-tile',
+  '.programmes .section-heading-row > *',
+  '.programme-quote',
+  '.consultancy-section .section-heading-row > *',
+  '.consultancy-intro',
+  '.consultancy-services-heading > *',
+  '.consultancy-card',
+  '.consultancy-cta',
+  '.service-inquiry',
+  '.leadership-heading',
+  '.leadership-intro',
+  '.leadership-copy',
+  '.giving-intro > *',
+  '.donation-methods > *',
+  '.contact-page-heading > *',
+  '.contact-information',
+  '.contact-form-panel',
+].join(', '))
+
+if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible')
+        observer.unobserve(entry.target)
+      }
+    })
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -6% 0px',
+  })
+
+  scrollRevealTargets.forEach((target) => {
+    target.classList.add('scroll-reveal')
+    revealObserver.observe(target)
+  })
+  document.documentElement.classList.add('scroll-reveal-enabled')
+}
 
 menuToggle.addEventListener('click', () => {
   const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true'

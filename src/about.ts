@@ -8,6 +8,8 @@ import ithacLogo from '../logos/ITHAC logo.webp'
 import wakfLogo from '../logos/WAKF logo.webp'
 import youngLeadersNetworkLogo from '../logos/young_leaders_network_logo.jpg'
 import aboutElfImage from '../Images/About ELF.webp'
+import weCareLogo from '../logos/WeCare foundation.jpg'
+import nascomsoftLogo from '../logos/nascomsoft embeded logo.jpg'
 
 export const foundationLogo = logo
 
@@ -35,7 +37,7 @@ export const aboutPage = `
           <img class="about-elf-image" src="${aboutElfImage}" alt="Eesha's Learning Foundation community activity" loading="lazy" />
         </div>
         <div class="intro-copy">
-          <p>Eesha's Learning Foundation (ELF) is a community-focused educational and development organization established in 2024 and founded by Aishatu Hassan. The Foundation was created from a simple but powerful belief: every child, young person and woman deserves access to knowledge, mentorship, opportunities and a platform to discover and express their potential.</p>
+          <p>Eesha's Learning Foundation (ELF) is a community-focused educational and development organization established in 2024 and founded by Aishatu Hassan Muhammad. The Foundation was created from a simple but powerful belief: every child, young person and woman deserves access to knowledge, mentorship, opportunities and a platform to discover and express their potential.</p>
           <p>Based in Bauchi, Nigeria, ELF works where education, literacy, mentorship, leadership, talent development, innovation and community development meet. Learning here goes beyond the classroom: it is a chance to think critically, communicate confidently and imagine new possibilities.</p>
         </div>
       </div>
@@ -68,6 +70,8 @@ export const aboutPage = `
           <figure class="partner-logo"><div><img src="${atapLogo}" alt="" loading="lazy" /></div><figcaption>Abubakar Tatari Ali Polytechnic</figcaption></figure>
           <figure class="partner-logo"><div><img src="${fpbLogo}" alt="" loading="lazy" /></div><figcaption>The Federal Polytechnic Bauchi</figcaption></figure>
           <figure class="partner-logo"><div><img src="${youngLeadersNetworkLogo}" alt="" loading="lazy" /></div><figcaption>Young Leaders Network</figcaption></figure>
+          <figure class="partner-logo"><div><img src="${weCareLogo}" alt="" loading="lazy" /></div><figcaption>WeCare Foundation</figcaption></figure>
+          <figure class="partner-logo"><div><img src="${nascomsoftLogo}" alt="" loading="lazy" /></div><figcaption>Nascomsoft Embeded LTD</figcaption></figure>
         </div>
       </div>
     </section>
