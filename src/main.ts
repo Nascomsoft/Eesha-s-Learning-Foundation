@@ -83,8 +83,6 @@ const scrollRevealTargets = document.querySelectorAll<HTMLElement>([
   '.programmes .section-heading-row > *',
   '.programme-quote',
   '.consultancy-section .section-heading-row > *',
-  '.consultancy-intro',
-  '.consultancy-services-heading > *',
   '.consultancy-card',
   '.consultancy-cta',
   '.service-inquiry',

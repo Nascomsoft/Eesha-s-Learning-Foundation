@@ -4,28 +4,19 @@ export const contactPage = `
         <header class="contact-page-heading">
           <p class="section-label"><span>Get in touch</span></p>
           <h1 id="contact-title">We'd love to hear from you.</h1>
-          <p>For questions, partnership enquiries, or more information about Eesha's Learning Foundation, contact us or leave a message below.</p>
+          <p>For questions, Partnership enquiries, Consultancy services, or more information about Eesha's Learning Foundation, contact us or leave a message below.</p>
         </header>
-
-        <section class="service-inquiry" id="service-inquiry" aria-labelledby="service-inquiry-title">
-          <div>
-            <p class="consultancy-eyebrow">Consultancy &amp; services</p>
-            <h2 id="service-inquiry-title">Interested in a service?</h2>
-            <p>Use the form below to tell us what you're interested in or ask a question.</p>
-          </div>
-          <p class="service-inquiry-fee"><span>Consultation fee</span><strong>₦5,000</strong></p>
-        </section>
 
         <div class="contact-page-grid">
           <section class="contact-information" aria-labelledby="contact-information-title">
             <h2 id="contact-information-title">Contact information</h2>
             <div class="contact-information-item">
               <h3>Email</h3>
-              <a href="mailto:eeshaslearningfoundation1@gmail.com">eeshaslearningfoundation1@gmail.com</a>
+              <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=eeshaslearningfoundation1%40gmail.com" target="_blank" rel="noopener noreferrer">eeshaslearningfoundation1@gmail.com</a>
             </div>
             <div class="contact-information-item">
-              <h3>Phone</h3>
-              <a href="tel:+2348060776555">+234 806 077 6555</a>
+              <h3>Reach Us On WhatsApp</h3>
+              <a href="https://wa.me/2348060776555" target="_blank" rel="noopener noreferrer">+234 806 077 6555</a>
             </div>
             <div class="contact-information-item">
               <h3>Social media</h3>
@@ -42,7 +33,7 @@ export const contactPage = `
 
           <section class="contact-form-panel" aria-labelledby="contact-form-title">
             <h2 id="contact-form-title">Send us a message</h2>
-            <p class="contact-form-notice">To reach us, email <a href="mailto:eeshaslearningfoundation1@gmail.com">eeshaslearningfoundation1@gmail.com</a>.</p>
+            <p class="contact-form-notice">To reach us, email <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=eeshaslearningfoundation1%40gmail.com" target="_blank" rel="noopener noreferrer">eeshaslearningfoundation1@gmail.com</a>.</p>
             <form id="contact-form">
               <div class="contact-form-fields">
                 <label for="contact-name">Your name

@@ -37,7 +37,7 @@ export const aboutPage = `
           <img class="about-elf-image" src="${aboutElfImage}" alt="Eesha's Learning Foundation community activity" loading="lazy" />
         </div>
         <div class="intro-copy">
-          <p>Eesha's Learning Foundation (ELF) is a community-focused educational and development organization established in 2024 and founded by Aishatu Hassan Muhammad. The Foundation was created from a simple but powerful belief: every child, young person and woman deserves access to knowledge, mentorship, opportunities and a platform to discover and express their potential.</p>
+          <p>Eesha's Learning Foundation (ELF) is a community-focused educational and development organization established in 2024 and founded by <strong>Aishatu Hassan Muhammad</strong>. The Foundation was created from a simple but powerful belief: <strong>every child, young person and woman deserves access to knowledge, mentorship, opportunities and a platform to discover and express their potential.</strong></p>
           <p>Based in Bauchi, Nigeria, ELF works where education, literacy, mentorship, leadership, talent development, innovation and community development meet. Learning here goes beyond the classroom: it is a chance to think critically, communicate confidently and imagine new possibilities.</p>
         </div>
       </div>
