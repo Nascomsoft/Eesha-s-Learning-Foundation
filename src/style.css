@@ -558,8 +558,9 @@ p {
 }
 
 .core-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
 }
 
@@ -583,12 +584,15 @@ p {
 }
 
 .programme-quotes {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
 }
 
 .programme-quote {
+  flex: 0 1 calc((100% - 36px) / 4);
+  min-width: min(230px, 100%);
   display: flex;
   min-height: 180px;
   align-items: center;
@@ -723,6 +727,8 @@ p {
   --image-tile-height: 260px;
   --image-tile-panel-height: 0px;
 
+  flex: 0 1 calc((100% - 36px) / 4);
+  min-width: min(230px, 100%);
   min-height: 0;
 }
 
@@ -783,12 +789,14 @@ p {
 }
 
 .partner-logo-grid {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
 }
 
 .partner-logo {
+  flex: 0 1 calc((100% - 60px) / 6);
   min-width: 0;
   margin: 0;
   padding: 12px;
@@ -847,12 +855,14 @@ p {
 }
 
 .impact-metrics {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
 }
 
 .impact-metric {
+  flex: 0 1 calc((100% - 36px) / 4);
   display: flex;
   min-height: 180px;
   flex-direction: column;
@@ -1561,7 +1571,11 @@ p {
   }
 
   .partner-logo-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .partner-logo {
+    flex-basis: calc((100% - 24px) / 3);
   }
 
   .future-grid {
@@ -1574,7 +1588,11 @@ p {
   }
 
   .impact-metrics {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .impact-metric {
+    flex-basis: calc((100% - 12px) / 2);
   }
 
   .values-grid {
@@ -1582,11 +1600,16 @@ p {
   }
 
   .programme-quotes {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .programme-quote {
+    flex-basis: calc((100% - 12px) / 2);
+    min-width: 0;
   }
 
   .core-grid {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+    gap: 12px;
   }
 
   .service-inquiry-pricing {
@@ -1778,7 +1801,11 @@ p {
   }
 
   .partner-logo-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .partner-logo {
+    flex-basis: calc((100% - 12px) / 2);
   }
 
   .impact-section {
